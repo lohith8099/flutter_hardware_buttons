@@ -82,7 +82,7 @@ class HardwareButtonsWatcherManager: PluginRegistry.ActivityResultListener {
                     attachScreenOffWatcherIfNeeded()
                 }
 
-                override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle) { }
+                override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) { }
                 
                 override fun onActivityStopped(activity: Activity) {
                     if (currentActivity?.equals(activity) == true) {
