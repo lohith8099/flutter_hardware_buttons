@@ -6,9 +6,9 @@ import android.os.Bundle
 
 
 abstract class EmptyActivityLifecycleCallbacks: Application.ActivityLifecycleCallbacks {
-    override fun onActivityPaused(activity: Activity?) { }
+    override fun onActivityPaused(activity: Activity) { }
 
-    override fun onActivityResumed(activity: Activity?) { }
+    override fun onActivityResumed(activity: Activity) { }
 
     override fun onActivityStarted(activity: Activity?) { }
 
