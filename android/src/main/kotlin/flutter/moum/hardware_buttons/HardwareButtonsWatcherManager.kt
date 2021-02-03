@@ -72,6 +72,7 @@ class HardwareButtonsWatcherManager: PluginRegistry.ActivityResultListener {
     private fun registerActivityLifecycleCallbacksIfNeeded() {
         if (activityLifecycleCallbacks == null) {
             activityLifecycleCallbacks = object: EmptyActivityLifecycleCallbacks() {
+                                
                 override fun onActivityStarted(activity: Activity) {
                     currentActivity = activity
 
@@ -81,6 +82,8 @@ class HardwareButtonsWatcherManager: PluginRegistry.ActivityResultListener {
                     attachScreenOffWatcherIfNeeded()
                 }
 
+                override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle) { }
+                
                 override fun onActivityStopped(activity: Activity) {
                     if (currentActivity?.equals(activity) == true) {
                         // detach all watchers
